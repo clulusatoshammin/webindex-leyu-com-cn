@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://clulusatoshammin.github.io/webindex-leyu-com-cn/sitemap.xml
