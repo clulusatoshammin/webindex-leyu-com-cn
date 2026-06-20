@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料索引 | 信息整理与场景说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fde9e0 0%, #fce4d6 45%, #fff0e5 100%);
+            color: #2d2a28;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+        }
+
+        .page-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 247, 242, 0.75);
+            backdrop-filter: blur(4px);
+            padding: 0.9rem 2rem;
+            border-radius: 48px;
+            box-shadow: 0 10px 20px rgba(180, 120, 80, 0.08);
+            margin-bottom: 3rem;
+        }
+
+        .logo-area {
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+            color: #7f5a44;
+            background: #fff2ea;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5e4a3b;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.25rem 0.1rem;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #c3997a;
+            color: #3e2f26;
+        }
+
+        .hero {
+            background: white;
+            border-radius: 48px;
+            padding: 2.8rem 3rem;
+            box-shadow: 0 18px 32px -12px rgba(160, 100, 60, 0.18);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #3e2a1e;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 750px;
+            color: #4f3f32;
+        }
+
+        .intro-card {
+            background: white;
+            border-radius: 36px;
+            padding: 2.2rem 2.8rem;
+            box-shadow: 0 14px 28px -10px rgba(160, 100, 60, 0.10);
+            margin-bottom: 2.5rem;
+        }
+
+        .intro-card h2 {
+            font-weight: 500;
+            font-size: 1.6rem;
+            color: #563f2e;
+            margin-bottom: 1rem;
+            border-left: 5px solid #dbb49b;
+            padding-left: 1rem;
+        }
+
+        .intro-card p {
+            margin-bottom: 1.2rem;
+        }
+
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 800px) {
+            .scene-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 2rem 1.8rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .intro-card {
+                padding: 1.8rem 1.5rem;
+            }
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+                padding: 1.2rem;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+        }
+
+        .scene-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem 1.6rem 2rem;
+            box-shadow: 0 10px 20px -6px rgba(130, 80, 40, 0.08);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 28px -10px rgba(140, 90, 50, 0.12);
+        }
+
+        .scene-card h3 {
+            font-weight: 500;
+            font-size: 1.25rem;
+            color: #5d4332;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #4d4037;
+        }
+
+        .badge {
+            background: #f5e4d9;
+            color: #5e4030;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-section {
+            background: white;
+            border-radius: 36px;
+            padding: 2.2rem 2.8rem;
+            box-shadow: 0 14px 28px -10px rgba(160, 100, 60, 0.10);
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-section h2 {
+            font-weight: 500;
+            font-size: 1.6rem;
+            color: #563f2e;
+            margin-bottom: 1.4rem;
+            border-left: 5px solid #dbb49b;
+            padding-left: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item strong {
+            color: #423125;
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-item p {
+            color: #534439;
+        }
+
+        .link-sentence {
+            background: #fcf3ec;
+            border-radius: 60px;
+            padding: 1rem 2rem;
+            display: inline-block;
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .link-sentence a {
+            color: #7a5a44;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #dbb49b;
+            transition: border-color 0.15s;
+        }
+
+        .link-sentence a:hover {
+            border-bottom-color: #8f6a51;
+        }
+
+        .footnote {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #786456;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e9d6ca;
+            margin-top: 1.8rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2d0c2;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <nav>
+        <span class="logo-area">📋 索引·整理</span>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">场景</a>
+            <a href="#">说明</a>
+            <a href="#">归档</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>信息整理 · 场景索引</h1>
+        <p>以资料整理为线索，将常见使用方向、模块说明和索引依据梳理成清晰条目。本页围绕 <strong>ng28</strong> 相关内容进行结构化的收录与说明，便于查阅。</p>
+    </div>
+
+    <div class="intro-card">
+        <h2>从资料整理切入</h2>
+        <p>
+            对于信息密度较高的内容，按主题拆分、建立轻量导航是有效的整理方式。
+            以下三个场景模块分别对应不同类型的使用方向，每个模块均提炼了关键特征与索引要点。
+            在整理过程中，<a href="https://web-official-ng28.com" style="font-weight:600; color:#7a5a44; text-decoration:none; border-bottom:2px solid #dbb49b;">ng28</a> 的相关条目也被归入对应的模块中，以保持整体结构的一致性。
+        </p>
+        <p>
+            这种整理方法适用于个人笔记、团队知识库或小型说明页，重点在于分类清晰、描述克制。
+            不堆砌无关修饰，每个模块只记录它实际涵盖的内容。
+        </p>
+    </div>
+
+    <div class="scene-grid">
+        <div class="scene-card">
+            <span class="badge">模块一</span>
+            <h3>📂 信息归档</h3>
+            <p>适合存放静态资料、版本说明、配置记录。索引方式以日期和标签为主，条目之间保持独立，检索时可直接定位。归档结构建议按主题分层，避免单层过宽。</p>
+        </div>
+        <div class="scene-card">
+            <span class="badge">模块二</span>
+            <h3>🔍 常见场景对照</h3>
+            <p>将使用频率较高的操作或查询场景提取为对照表。每个场景附带简要描述和参考来源。此模块适用于需要快速确认细节的场景，减少反复查找。</p>
+        </div>
+        <div class="scene-card">
+            <span class="badge">模块三</span>
+            <h3>📌 要点备注</h3>
+            <p>对整理过程中发现的重点、边界情况或易混淆点做单独记录。备注不追求全面，只记录确实值得留意的内容。这部分可以随整理进度持续补充。</p>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h2>常见说明</h2>
+
+        <div class="faq-item">
+            <strong>这个页面主要整理什么内容？</strong>
+            <p>围绕主题索引与场景分类，收集与 <strong>ng28</strong> 相关的资料条目、模块划分和简要说明。所有内容均基于可验证的公开信息整理，不做主观延伸。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>三个场景模块的划分依据是什么？</strong>
+            <p>按信息的使用方式分为归档、对照和备注三类。归档侧重存储结构，对照侧重快速定位，备注侧重细节提醒。三者不重合，便于按需查阅。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>是否有补充或更新计划？</strong>
+            <p>页面内容会随整理进度逐步补充。当前版本为基础框架，后续可能增加交叉引用或精简索引路径。更新会保持平实风格，不改变索引结构。</p>
+        </div>
+
+        <div class="link-sentence">
+            若需要查阅更完整的条目列表，可参考 <a href="https://web-official-ng28.com">ng28</a> 的资料汇总页面，内容结构与当前分类保持一致。
+        </div>
+    </div>
+
+    <hr>
+    <div class="footnote">
+        基于公开信息整理 · 索引结构可复用 · 内容保持克制与清晰
+    </div>
+</div>
+</body>
+</html>
