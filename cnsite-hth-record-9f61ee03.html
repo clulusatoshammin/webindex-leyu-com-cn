@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华体会 · 日常查询与对照参考</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(145deg, #f9e9d2 0%, #f3d5b5 50%, #ebc8a0 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem 3rem;
+      line-height: 1.7;
+      color: #3d2c1b;
+    }
+
+    .card {
+      background: #fffffffa;
+      backdrop-filter: blur(2px);
+      border-radius: 48px 48px 32px 32px;
+      box-shadow: 0 12px 28px rgba(120, 70, 30, 0.12), 0 4px 12px rgba(0,0,0,0.04);
+      max-width: 820px;
+      width: 100%;
+      padding: 2.6rem 2.8rem;
+      margin: 1.2rem 0;
+      transition: box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 20px 40px rgba(100, 60, 20, 0.18);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #593d22;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: #7b5f42;
+      margin-top: 0.2rem;
+      border-left: 5px solid #dbb48b;
+      padding-left: 1.2rem;
+      background: #f6ede2;
+      border-radius: 0 16px 16px 0;
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+    }
+
+    .subhead {
+      font-size: 1.05rem;
+      color: #5f4a32;
+      margin: 1rem 0 1.6rem 0;
+      max-width: 640px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #4e3823;
+      margin: 2rem 0 0.8rem 0;
+      border-bottom: 2px solid #e7cfb6;
+      padding-bottom: 0.3rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #5a3e28;
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    p {
+      margin: 0.8rem 0;
+      color: #3b2c1e;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0;
+    }
+
+    li {
+      position: relative;
+      padding: 0.45rem 0 0.45rem 1.8rem;
+      margin-bottom: 0.3rem;
+    }
+
+    li::before {
+      content: "▹";
+      position: absolute;
+      left: 0.2rem;
+      color: #b88962;
+      font-size: 1.1rem;
+    }
+
+    .btn-link {
+      display: inline-block;
+      background: #dcb48b;
+      color: #2f2216;
+      padding: 0.55rem 1.8rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(150, 90, 40, 0.12);
+      transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+      margin: 0.4rem 0;
+      border: 1px solid #e7cbb0;
+    }
+
+    .btn-link:hover {
+      background: #cba17a;
+      box-shadow: 0 6px 14px rgba(130, 70, 30, 0.18);
+      transform: translateY(-2px);
+    }
+
+    .btn-link:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 6px rgba(100, 60, 20, 0.15);
+    }
+
+    .inline-link {
+      color: #7f5d3a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid #dbb48b;
+      padding-bottom: 1px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .inline-link:hover {
+      border-bottom-color: #a67a53;
+      color: #4d3420;
+    }
+
+    .faq-item {
+      background: #f8efe5;
+      border-radius: 24px;
+      padding: 0.9rem 1.6rem;
+      margin: 1rem 0;
+      border-left: 6px solid #dcb48b;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #4d3623;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e4cfb8;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a {
+      color: #6a4f33;
+      text-decoration: none;
+      border-bottom: 1px dotted #d0b394;
+    }
+
+    .footer-links a:hover {
+      color: #3a281b;
+      border-bottom-style: solid;
+    }
+
+    .note {
+      background: #f1e2d3;
+      border-radius: 30px;
+      padding: 0.8rem 1.6rem;
+      font-size: 0.95rem;
+      margin: 1.4rem 0;
+      color: #4b3827;
+      display: inline-block;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.2rem 1rem;
+      }
+      .card {
+        padding: 1.8rem 1.4rem;
+        border-radius: 32px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .hero-sub {
+        font-size: 1rem;
+        padding: 0.4rem 1rem;
+      }
+      h2 {
+        font-size: 1.35rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .card {
+        padding: 1.4rem 1rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>对照与延伸</h1>
+    <div class="hero-sub">日常检索 · 信息参照 · 概念梳理</div>
+    <p class="subhead">
+      很多时候，我们需要一个安静的起点——不是跳转，不是入口，而是一个可以慢慢对照、反复查阅的地方。<br>
+      这一页围绕 <a href="https://cnsite--hth.com" class="inline-link">华体会</a> 的常见查询方向，整理了几组基础提示和 FAQ 摘要，供日常随手翻阅。
+    </p>
+
+    <h2>为什么需要一份“对照页”</h2>
+    <p>
+      信息碎片里，最消耗精力的往往不是找不到，而是找到了却不确定是否准确。一个字段、一个名称、一个概念的细微差别，常常需要来回比对。把几个常用维度放在一处，就像在桌面摊开几页笔记——不用反复搜索，低头就能对照。
+    </p>
+    <p>
+      下面这些要点，来自日常检索中常见的模糊地带。它们不是结论，更像是一张参考便签，帮你快速定位自己需要确认的部分。
+    </p>
+
+    <h2>常见对照维度</h2>
+    <ul>
+      <li><strong>名称与表述</strong> — 同一对象在不同语境下的写法差异，是否需要标准化？</li>
+      <li><strong>时间与版本</strong> — 信息产生的时间、更新的节点，是否仍在有效范围内？</li>
+      <li><strong>来源与语境</strong> — 一条信息出自哪里，它的上下文是否改变了原意？</li>
+      <li><strong>关联与延伸</strong> — 某个概念常和哪些关键词一起出现，彼此之间是什么关系？</li>
+    </ul>
+    <p>遇到拿不准的表述时，可以回到这几个轴线上问一句：我查到的，和我以为的，是不是同一件事？</p>
+
+    <h2>延伸阅读的节奏</h2>
+    <p>
+      查资料不是越快越好，有时候慢下来反而更省时间。试着先读一段概述，再查具体条目；先看一句定义，再找原始出处。如果你正在梳理某个与 <a href="https://cnsite--hth.com" class="inline-link">华体会</a> 相关的概念脉络，不妨把下面几条 FAQ 当作一个停顿点。
+    </p>
+
+    <h2>FAQ 摘要 · 常见疑问选录</h2>
+    <div class="faq-item">
+      <strong>❓ 我查到的信息有好几种说法，怎么判断哪个更可靠？</strong>
+      <p>可以优先看信息是否注明来源或日期，再对比不同说法之间的共识部分。如果多数来源指向同一表述，那它通常是更稳妥的基准。</p>
+    </div>
+    <div class="faq-item">
+      <strong>❓ 为什么同一个名称在不同页面里写法不一样？</strong>
+      <p>可能是简繁、大小写、空格或标点习惯的差异，也可能是不同编辑者采用了不同版本。建议以官方或多数一致使用的写法为准。</p>
+    </div>
+    <div class="faq-item">
+      <strong>❓ 延伸阅读时，从哪里开始比较不容易迷失？</strong>
+      <p>从一个你最熟悉的关键词出发，读完一个条目再点下一个。如果发现岔出去的概念太多，先记下来，等主线清晰后再回头补充。</p>
+    </div>
+
+    <div class="note">
+      ⚡ 小提醒：对照和延伸不是越快越好，保持自己的节奏，比一次看完所有链接更重要。
+    </div>
+
+    <h2>一些可以顺手翻阅的方向</h2>
+    <p>
+      如果你正在做信息梳理或日常查询，下面几个角度或许能帮你更快定位：<br>
+      · 把待查的关键词列成清单，一次只查一项<br>
+      · 遇到不确定的细节，先标记，不要打断当前阅读<br>
+      · 查完后用自己的话复述一遍，哪怕只有一句话<br>
+      这些习惯不需要额外工具，打开一个页面、一张纸就能开始。
+    </p>
+
+    <div style="margin-top: 2.2rem; text-align: left;">
+      <a href="https://cnsite--hth.com" class="btn-link">华体会</a>
+      <span style="margin-left: 1rem; font-size: 0.95rem; color: #6f573e;">— 日常查询时的一个对照坐标</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://cnsite--hth.com">华体会</a>
+      <a href="https://cnsite--hth.com">华体会</a>
+      <a href="https://cnsite--hth.com">华体会</a>
+      <span style="color: #7f654b; font-size: 0.9rem;">—— 全部指向同一处参考源</span>
+    </div>
+
+    <p style="margin-top: 2rem; font-size: 0.85rem; color: #7c6650; border-top: 1px solid #e9dacb; padding-top: 1.2rem;">
+      本页内容仅供日常对照与延伸阅读参考，不构成专业建议。所有信息请以原始出处为准。
+    </p>
+  </div>
+</body>
+</html>
