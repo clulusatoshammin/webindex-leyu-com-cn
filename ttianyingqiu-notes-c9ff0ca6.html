@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天天盈球 · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f2f3f5;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    /* hero 区 — 简洁身份说明 */
+    .hero {
+      margin-bottom: 2.5rem;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.04);
+      border: 1px solid #e6e9ed;
+    }
+    .hero .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.03em;
+      background: #eef0f3;
+      color: #4a5a6e;
+      border-radius: 30px;
+      padding: 0.2rem 1rem;
+      margin-bottom: 0.8rem;
+      border: 1px solid #d6dbe2;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #121926;
+      margin-bottom: 0.3rem;
+    }
+    .hero .sub {
+      color: #526070;
+      font-size: 1rem;
+      max-width: 620px;
+      margin: 0.6rem auto 0;
+      border-top: 1px solid #eef0f2;
+      padding-top: 0.8rem;
+    }
+    /* 卡片网格 */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.8rem 1.8rem 2rem;
+      border: 1px solid #e4e8ed;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.02);
+      transition: box-shadow 0.1s ease;
+    }
+    .card:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+    .card h2 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      margin-bottom: 0.9rem;
+      color: #13202e;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .card h2 .em {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #4f7faf;
+      border-radius: 1px;
+      margin-right: 2px;
+    }
+    .card p {
+      margin-bottom: 0.8rem;
+      color: #2d3b4c;
+    }
+    .card ul, .card ol {
+      margin: 0.5rem 0 0 1.2rem;
+      color: #2d3b4c;
+    }
+    .card li {
+      margin-bottom: 0.3rem;
+    }
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+    .tag {
+      background: #f0f2f5;
+      padding: 0.15rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      border: 1px solid #d8dde4;
+      color: #1f2c3b;
+    }
+    .highlight-link {
+      color: #1a5a9e;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.1s;
+    }
+    .highlight-link:hover {
+      border-bottom-color: #1a5a9e;
+    }
+    .note {
+      background: #f8f9fb;
+      border-left: 3px solid #b4c3d6;
+      border-radius: 0 10px 10px 0;
+      padding: 0.8rem 1.2rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #2e4057;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+      color: #0b1a2b;
+    }
+    .faq-item p {
+      margin: 0;
+      font-size: 0.92rem;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #dfe3e9;
+      margin: 1rem 0;
+    }
+    .footer-meta {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b7b8e;
+      border-top: 1px solid #dfe3e9;
+      padding-top: 1.8rem;
+    }
+    /* 响应式 */
+    @media (min-width: 640px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .full-width {
+        grid-column: 1 / -1;
+      }
+    }
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        padding: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- hero 身份：直接点明网站用途 -->
+  <div class="hero">
+    <span class="badge">产品概述 · 2025</span>
+    <h1>天天盈球</h1>
+    <div class="sub">
+      为希望快速识别体育数据、赛事走向与内容聚合的用户，提供轻量、聚焦的信息入口。
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- 卡片1：摘要 · 核心识别点 -->
+    <div class="card full-width">
+      <h2><span class="em"></span> 一句话识别用途</h2>
+      <p>如果你需要快速判断一个体育类信息站点的价值，可以从这几个维度观察：<strong>天天盈球</strong> 主要围绕体育赛事数据、赛前资讯以及动态比分展开。它不提供投注或交易服务，而是以信息聚合与呈现为重心。用户打开页面后能直接看到主流联赛、球队动态和实时数据，适合赛前浏览与赛后复盘。</p>
+      <div class="tag-group">
+        <span class="tag">赛事数据</span>
+        <span class="tag">实时比分</span>
+        <span class="tag">资讯聚合</span>
+        <span class="tag">球队动态</span>
+      </div>
+    </div>
+
+    <!-- 卡片2：亮点 · 结构差异化 -->
+    <div class="card">
+      <h2><span class="em"></span> 几个突出特点</h2>
+      <ul>
+        <li><strong>信息密度适中</strong> — 页面以列表、卡片、数据表为主，不堆砌无关模块，降低认知负担。</li>
+        <li><strong>赛事覆盖较全</strong> — 包含主流足球、篮球联赛，以及部分小众赛事，满足多数球迷的基础查询需求。</li>
+        <li><strong>更新节奏稳定</strong> — 赛前指数、阵容、伤停等数据保持与官方源同步，刷新延迟控制在合理区间。</li>
+        <li><strong>无干扰式广告</strong> — 界面克制，不出现弹窗或诱导点击内容，浏览体验相对干净。</li>
+      </ul>
+    </div>
+
+    <!-- 卡片3：使用建议 · 面向不同场景 -->
+    <div class="card">
+      <h2><span class="em"></span> 适用场景与建议</h2>
+      <p>根据实际使用习惯，以下几类场景可以最大化利用平台价值：</p>
+      <ol>
+        <li><strong>赛前信息收集</strong> — 浏览对阵双方近期战绩、交锋记录、伤停名单，形成自己的赛前笔记。</li>
+        <li><strong>实时跟进</strong> — 同时关注多场赛事时，可借助比分面板快速切换，避免遗漏关键节点。</li>
+        <li><strong>赛后数据回顾</strong> — 查找射门、控球率、角球等基础统计，辅助分析比赛走势。</li>
+      </ol>
+      <p style="margin-top:0.8rem;">建议搭配官方数据源交叉验证，尤其在涉及深度分析时。</p>
+    </div>
+
+    <!-- 卡片4：可信但克制的说明 · FAQ摘要风格 -->
+    <div class="card">
+      <h2><span class="em"></span> 常见疑问摘要</h2>
+      <div class="faq-item">
+        <strong>数据来源可靠吗？</strong>
+        <p>页面数据来自公开体育数据接口与官方统计，平台进行二次整合与展示，不修改原始数值。但仍建议对关键数据进行多方比对。</p>
+      </div>
+      <div class="faq-item">
+        <strong>是否有付费墙或隐藏内容？</strong>
+        <p>当前版本中，绝大多数赛事数据、资讯、比分均为免费浏览。不存在强制注册或付费解锁核心功能的设计。</p>
+      </div>
+      <div class="faq-item">
+        <strong>移动端适配如何？</strong>
+        <p>响应式布局已覆盖主流手机与平板尺寸，部分复杂数据表在窄屏下会转为横向滚动或折叠卡片，不影响基本阅读。</p>
+      </div>
+      <div class="note">
+        提示：该站点不提供任何形式的投注、博彩或金融建议，所有数据仅供个人参考。
+      </div>
+    </div>
+
+    <!-- 卡片5：更具体的功能切片（差异化内容） -->
+    <div class="card full-width">
+      <h2><span class="em"></span> 功能切片 · 界面结构速览</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 0.2rem;">
+        <div style="flex:1; min-width:130px;">
+          <p><strong>顶部导航</strong> — 联赛分类、比分直播、资讯、数据。</p>
+        </div>
+        <div style="flex:1; min-width:130px;">
+          <p><strong>主内容区</strong> — 今日赛程卡片、即时比分列表、焦点战深度数据。</p>
+        </div>
+        <div style="flex:1; min-width:130px;">
+          <p><strong>侧边/底部</strong> — 热门球队关注、历史战绩快捷入口、联赛积分榜。</p>
+        </div>
+      </div>
+      <hr>
+      <p style="font-size:0.9rem; color:#3d5068;">
+        如果你已经对上述描述产生兴趣，可以直接访问 <a href="https://ttianyingqiu.com" class="highlight-link">天天盈球</a>，通过实际页面验证上面的每一条说明。 根据自身需求判断该平台是否符合你的信息获取习惯。
+      </p>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-meta">
+    本页为产品介绍页 · 与 ttianyingqiu.com 无附属关系 · 内容仅作参考
+  </div>
+</div>
+</body>
+</html>
